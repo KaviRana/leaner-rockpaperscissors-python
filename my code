@@ -1,0 +1,43 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+import random
+player_hand_signal = int(input("Hello Player.It is great to see you here.Choose from the following\n 0 for Rock\n 1 for Paper\n 2 for Scissors."))
+hand_signal = [rock, paper, scissors]
+print("Your Move\n")
+print(hand_signal[player_hand_signal])
+computer_hand_signal = random.randint(0,2)
+print("Computer Move\n")
+print(hand_signal[computer_hand_signal])
+
+if player_hand_signal == computer_hand_signal:
+  print("\nIts a DRAW.🤷‍♀️")
+elif (player_hand_signal==0 and computer_hand_signal==1) or (player_hand_signal==1 and computer_hand_signal==2) or (player_hand_signal==2 and computer_hand_signal==0):
+  print("\nCOMPUTER WINS.\n😥😥😥\nClick Run to play again!")
+elif player_hand_signal>=3 or player_hand_signal<0:
+  print("INVALID MOVE.YOU LOSE.😡😡😡😡😡")
+else:
+  print("\nYOU WIN\n😊👍👍\nIm proud of you!!!")
